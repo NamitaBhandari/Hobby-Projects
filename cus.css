@@ -1,0 +1,32 @@
+h1 {
+
+    text-align: left ;
+    font-size: 25pt ;
+    color: black ;
+    margin-bottom: 5px ;
+    text-decoration: underline ;
+    padding: 15px 32px;
+}
+
+div {
+
+    text-align: left;
+    border: 15px solid transparent;
+    line-height: 30%;
+}
+
+#content3 {
+
+    border-right: 40cm solid transparent;
+}
+
+div button{
+
+    background-color: #4CAF50;
+    border: 10px;
+    text-align: center;
+    font-size: 16px;
+    margin: 10px 2px;
+    padding: 15px 32px;
+}
+

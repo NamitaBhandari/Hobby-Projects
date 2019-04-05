@@ -9,29 +9,73 @@
 
 <header><b><h1> Customer Form</h1></b></header>
 
+<script type = "text/javascript">
+
+    function validate()
+    {
+        if(document.myForm.input1.value == "")
+         {
+             alert("Please enter a customer Name!");
+             document.myForm.input1.focus();
+             return false;
+         }
+
+        if(document.myform.input2.value == "")
+        {
+            alert("Please enter Customer ID");
+            document.myForm.input2.focus();
+            return false;
+        }
+        // else
+        // {
+        //     var num = [0-9] ;
+        //     var alp = [A-Z] ;
+        //     if (input2.value.match(num) && input2.value.match(alp))
+        //      {
+        //          return true;
+        //      }
+        //      else
+        //      {
+        //          alert("Check CustomerID,should be Alphanumeric")
+        //          return false;
+        //      }
+        // }
+
+        if(document.myForm.input3.value == "");
+        {
+            alert("Please enter Department");
+            document.myForm.input3.focus();
+            return false;
+        }
+
+        return (true);
+    }
+
+    </script>
+
 </head>
 
 <body>
 
-    <form>
+    <form action = "/cgi-bin/test.cgi" name = "myForm" onsubmit = "return(validate());">
 
     <div id="Content">
 
-    <div id="content1">
+     <div id="content1"> 
         <br>
-        <br> Customer Name :
+        <br> <span> Customer Name : </span>
         <input id='input1' type="text" name = 'Customer Name'>
         <br>
-    </div>
+     </div> 
 
-    <div id="content2">
+    <div id="content2"> 
             <br>
             <br> Customer ID :
             <input id='input2' type="text" name = 'Customer ID'>
-            <br>    
-    </div>
+            <br>
+     </div> 
 
-    <div id="content2">
+     <div id="content2"> 
                 <br>
                 <br> Customer Department :
                 <select>
@@ -43,7 +87,7 @@
                     <option value="SLS">Sales</option>
                 </select>
                 <br>
-    </div>
+    </div> 
 
     <div id ="content3" border-right: 40cm solid transparent>
             <br>
@@ -61,14 +105,16 @@
     <div id = "content4"> 
         <br>
         <br>
-        <button type="button" onclick="alert('Hello world!')">Submit</button>
+        <button type="button" onclick="validate()">Submit</button>
+        <br>
+        <br>
 
-    </div> 
+     </div>
 
-</div> <!---final--> 
+</div> <!---final-->
 
 </form>
 
 </body>
 
-</html>  
+</html>

@@ -20,35 +20,45 @@
              return false;
          }
 
-        if(document.myform.input2.value == "")
+        if(document.myForm.input2.value == "")
         {
             alert("Please enter Customer ID");
             document.myForm.input2.focus();
             return false;
         }
-        // else
-        // {
-        //     var num = [0-9] ;
-        //     var alp = [A-Z] ;
-        //     if (input2.value.match(num) && input2.value.match(alp))
-        //      {
-        //          return true;
-        //      }
-        //      else
-        //      {
-        //          alert("Check CustomerID,should be Alphanumeric")
-        //          return false;
-        //      }
-        // }
 
-        if(document.myForm.input3.value == "");
+         else
+         {
+             var num = /^[0-9a-zA-Z]+$/;
+            
+             if (input2.value.match(num))
+              {
+                //   return true;
+              }
+              else
+              {
+                  alert("Check CustomerID,should be Alphanumeric")
+                  return false;
+              }
+         }
+
+        var e = document.getElementById("ddlView");
+        var optionSelIndex = e.options[e.selectedIndex].value;
+        
+        if (optionSelIndex == 0) 
+
         {
-            alert("Please enter Department");
-            document.myForm.input3.focus();
-            return false;
+        alert("Please select a Customer Department");
         }
 
-        return (true);
+        else 
+        {
+           
+        return true;
+        }
+
+
+        return true ;
     }
 
     </script>
@@ -78,8 +88,8 @@
      <div id="content2"> 
                 <br>
                 <br> Customer Department :
-                <select>
-                    <option value="B">  </option>
+                <select id = "ddlview" >
+                    <option value="0">  </option>
                     <option value="HR">Human Resource</option>
                     <option value='FI'>Finance</option>
                     <option value="IT">Information Technology</option>

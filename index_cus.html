@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <link href="cus.css" rel="stylesheet" type="text/css">
+
+<title>Customer Entry</title>
+
+<header><b><h1> Customer Form</h1></b></header>
+
+<script type = "text/javascript">
+
+    function validate()
+
+    {
+       var name = document.getElementById('input1')
+       var id = document.getElementById('input2')
+       var dept = document.getElementById('ddlView')
+
+        if(name.value == "")
+         {
+             alert("Please enter a customer Name!");
+            //  document.myForm.input1.focus(); for future reference don not delete
+            name.focus();
+             return false;
+         }
+
+    
+        if(id.value == "")
+        {
+            alert("Please enter Customer ID");
+            id.focus();
+            return false;
+        }
+
+         else  
+         {
+             var num = /^[0-9a-zA-Z]+$/;
+            //  var values = getValues();
+
+             if (input2.value.match(num))
+              {
+                //   return true;
+              }
+              else
+              {
+                //  var values = getValues();
+                  alert( input2.value +' CustomerID,should be Alphanumeric');
+                  return false;
+              }
+         }
+
+        // var optionSelIndex = e.options[e.selectedIndex].value;
+        
+        // if (optionSelIndex == 0) 
+
+        if (dept.value == "0")
+
+        {
+        alert("Please select a Customer Department");
+
+        return false;
+        }
+
+        return true ;
+    }
+
+    </script>
+
+</head>
+
+<body>
+
+    <form action = "/cgi-bin/test.cgi" name = "myForm" onsubmit = "return(validate());">
+
+    <div id="Content">
+
+     <div id="content1"> 
+        <br>
+        <br> <span> Customer Name : </span>
+        <input id='input1' type="text" name = 'Customer Name'>
+        <br>
+     </div> 
+
+    <div id="content2"> 
+            <br>
+            <br> Customer ID :
+            <input id='input2' type="text" name = 'Customer ID'>
+            <br>
+     </div> 
+
+     <div id="content2"> 
+                <br>
+                <br> Customer Department :
+                <select id = "ddlView" >
+                    <option value="0">  </option>
+                    <option value="HR">Human Resource</option>
+                    <option value='FI'>Finance</option>
+                    <option value="IT">Information Technology</option>
+                    <option value='MRK'>Marketing</option>
+                    <option value="SLS">Sales</option>
+                </select>
+                <br>
+    </div> 
+
+    <div id ="content3" border-right: 40cm solid transparent>
+            <br>
+            <br>
+            <fieldset>
+                <legend>Employement</legend>
+                <br>
+            <input type="radio" name='perm' value='Permanent'>Permanent<br><br>
+            <input type='radio' name="intern" value="Internship">Internship<br><br>
+            <input type="radio" name="contr" value="Contract">Contract<br><br>
+            <br>
+           </fieldset>
+    </div>
+
+    <div id = "content4"> 
+        <br>
+        <br>
+        <button type="button" onclick="validate()">Submit</button>
+        <br>
+        <br>
+
+     </div>
+
+</div> <!---final-->
+
+</form>
+
+</body>
+
+</html>
